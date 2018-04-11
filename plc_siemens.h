@@ -11,6 +11,7 @@ class PLC_Siemens : public QThread
 {
 #define DB_LENGTH 200
 #define DB_NO 1;
+
 typedef float *pfloat;
 
 public:
