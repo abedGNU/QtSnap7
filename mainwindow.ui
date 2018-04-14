@@ -24,14 +24,14 @@
      </rect>
     </property>
     <property name="text">
-     <string>TextLabel</string>
+     <string>PLC data</string>
     </property>
    </widget>
    <widget class="QPushButton" name="pbWrite">
     <property name="geometry">
      <rect>
       <x>20</x>
-      <y>20</y>
+      <y>60</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -44,7 +44,7 @@
     <property name="geometry">
      <rect>
       <x>170</x>
-      <y>20</y>
+      <y>60</y>
       <width>91</width>
       <height>41</height>
      </rect>
@@ -54,13 +54,26 @@
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>20</y>
-      <width>75</width>
-      <height>23</height>
+      <y>60</y>
+      <width>131</width>
+      <height>41</height>
      </rect>
     </property>
     <property name="text">
      <string>TestCasting</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="ipLabel">
+    <property name="geometry">
+     <rect>
+      <x>40</x>
+      <y>10</y>
+      <width>301</width>
+      <height>31</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>Ip address</string>
     </property>
    </widget>
   </widget>
@@ -70,7 +83,7 @@
      <x>0</x>
      <y>0</y>
      <width>656</width>
-     <height>21</height>
+     <height>22</height>
     </rect>
    </property>
   </widget>

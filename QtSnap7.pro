@@ -26,17 +26,18 @@ SOURCES += \
         main.cpp \
         mainwindow.cpp \
     snap7.cpp \
-    plc_siemens.cpp
+    plc_siemens.cpp \
+    settings.cpp
 
 HEADERS += \
         mainwindow.h \
     snap7.h \
-    plc_siemens.h
+    plc_siemens.h \
+    settings.h
 
 FORMS += \
         mainwindow.ui
 
 
-
-LIBS += -L$$PWD/lib/ -lsnap7
+include("lib.pri")
 

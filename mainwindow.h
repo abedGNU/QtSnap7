@@ -9,6 +9,8 @@
 #include "snap7.h"
 #include "plc_siemens.h"
 
+#include "settings.h"
+
 class MainWindow : public QMainWindow, private Ui::MainWindow
 {
     Q_OBJECT
@@ -16,11 +18,14 @@ class MainWindow : public QMainWindow, private Ui::MainWindow
 public:
     explicit MainWindow(QWidget *parent = 0);
 
+    Settings settings;
+
     PLC_Siemens *plcSiemens;
 
     QTimer *timer ;
 
-   void byteCastingtest();
+    void byteCastingtest();
+
 #pragma pack(push, 1)
     typedef struct
     {

@@ -5,7 +5,9 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setupUi(this);
 
-    plcSiemens = new PLC_Siemens("192.168.50.100");
+    ipLabel->setText("PLC IP address"+settings.PlcIpAddress);
+
+    plcSiemens = new PLC_Siemens(settings.PlcIpAddress,settings.NoDB, settings.BufferLen);
     plcSiemens->start();
 
     timer= new QTimer(this);

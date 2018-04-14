@@ -9,23 +9,22 @@
 
 class PLC_Siemens : public QThread
 {
-#define DB_LENGTH 200
-#define DB_NO 1;
 
-typedef float *pfloat;
+
+    typedef float *pfloat;
 
 public:
     enum dataType {eBit, eByte, eInt, eDInt, eWord, eDowrd, eReal};
-
     PLC_Siemens(QString ipAddress);
+    PLC_Siemens(QString ipAddress, int DB_No, int DB_Length);
     //
     bool connect();
     void ReadCycle();
     bool WriteVal( dataType typ, int dbNum, int offset,  int val);
-//
+    //
     QMutex mutex;
 
- // Helper functions
+    // Helper functions
     uint getUInt16(int Pos);
     uint getUInt16(byte* Buffer, int Pos);
 
@@ -40,8 +39,11 @@ public:
 
     double getReal(int Pos);
     double getReal(byte* Buffer, int Pos);
-//
+    //
     QString ipAddress;
+    int DB_No=1;
+    int DB_Length=20;
+
     TS7Client *MyS7Client;
     byte DB_Buffer[200];
 

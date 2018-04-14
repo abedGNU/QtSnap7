@@ -7,6 +7,15 @@ PLC_Siemens::PLC_Siemens(QString ipAddress)
     connect();
 }
 
+PLC_Siemens::PLC_Siemens(QString ipAddress, int DB_No, int DB_Length)
+{
+    MyS7Client = new TS7Client();
+    this->ipAddress = ipAddress;
+    this->DB_No= DB_No;
+    this->DB_Length = DB_Length;
+    connect();
+}
+
 bool PLC_Siemens::connect()
 {
     if ( !MyS7Client->Connected() )
