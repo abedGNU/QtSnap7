@@ -53,8 +53,8 @@
    <widget class="QPushButton" name="pbTestCasting">
     <property name="geometry">
      <rect>
-      <x>450</x>
-      <y>60</y>
+      <x>500</x>
+      <y>80</y>
       <width>131</width>
       <height>41</height>
      </rect>
@@ -76,6 +76,19 @@
      <string>Ip address</string>
     </property>
    </widget>
+   <widget class="QLabel" name="lblLanguage">
+    <property name="geometry">
+     <rect>
+      <x>440</x>
+      <y>10</y>
+      <width>131</width>
+      <height>41</height>
+     </rect>
+    </property>
+    <property name="text">
+     <string>TextLabel</string>
+    </property>
+   </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
@@ -86,6 +99,14 @@
      <height>22</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuEnglish">
+    <property name="title">
+     <string>Language</string>
+    </property>
+    <addaction name="actionEnglish"/>
+    <addaction name="actionItalian"/>
+   </widget>
+   <addaction name="menuEnglish"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -96,6 +117,16 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actionEnglish">
+   <property name="text">
+    <string>English</string>
+   </property>
+  </action>
+  <action name="actionItalian">
+   <property name="text">
+    <string>Italian</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>

@@ -4,6 +4,7 @@
 #include <QString>
 #include <QSettings>
 #include <QDebug>
+#include <QFile>
 
 class Settings
 {

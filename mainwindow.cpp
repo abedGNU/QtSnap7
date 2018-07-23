@@ -5,7 +5,11 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 {
     setupUi(this);
 
-    ipLabel->setText("PLC IP address"+settings.PlcIpAddress);
+    Italian = new QTranslator(this);
+    Italian->load(":/translations/translation/translation_it.qm");
+
+    pbWrite->setText(tr("Write"));
+    ipLabel->setText(tr("PLC IP address")+settings.PlcIpAddress);
 
     plcSiemens = new PLC_Siemens(settings.PlcIpAddress,settings.NoDB, settings.BufferLen);
     plcSiemens->start();
@@ -18,9 +22,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent)
 
 void MainWindow::byteCastingtest()
 {
-   // uint8_t pBuff = { 0x11 , 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19 };
+    // uint8_t pBuff = { 0x11 , 0x22, 0x33, 0x44, 0x55, 0x66, 0x77, 0x88, 0x99, 0xAA, 0xBB, 0xCC, 0xDD, 0xEE, 0xFF, 0x12, 0x13, 0x14, 0x15, 0x16, 0x17, 0x18, 0x19 };
     PtestStruct_t pStruct = (PtestStruct_t)plcSiemens->DB_Buffer;
     qDebug()<< "Test casting";
+}
+
+void MainWindow::changeEvent(QEvent *event)
+{
+    if(event->type() == QEvent::LanguageChange)
+    {
+        retranslateUi(this);
+    }
+    else
+    {
+        QMainWindow::changeEvent(event);
+    }
 }
 
 
@@ -56,4 +72,16 @@ void MainWindow::update()
 void MainWindow::on_pbTestCasting_clicked()
 {
     byteCastingtest();
+}
+
+void MainWindow::on_actionEnglish_triggered()
+{
+    qApp->removeTranslator(Italian);
+    lblLanguage->setText(tr("English"));
+}
+
+void MainWindow::on_actionItalian_triggered()
+{
+    qApp->installTranslator(Italian);
+     lblLanguage->setText(tr("Italian"));
 }

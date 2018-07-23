@@ -33,11 +33,16 @@ HEADERS += \
         mainwindow.h \
     snap7.h \
     plc_siemens.h \
-    settings.h
+    settings.h \
+    global.h
 
 FORMS += \
         mainwindow.ui
 
+TRANSLATIONS = translation/translation_it.ts
 
 include("lib.pri")
+
+RESOURCES += \
+    resources.qrc
 

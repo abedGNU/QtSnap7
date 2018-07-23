@@ -2,14 +2,21 @@
 
 Settings::Settings()
 {
+    QFile settFile(settingsFileName);
     int res =-1;
     /* If settings file doesn't exist in the default directory
      * create new one with default value Or select one
      **/
     settings = new QSettings(settingsFileName, QSettings::IniFormat);
-    //createDefaultSettings();
-    //qDebug() << "Creating default setting in: " << "done " << res;
-
+    if (!settFile.exists())
+    {
+        createDefaultSettings();
+        qDebug() << "Creating default setting in: " << "done " << res;
+    }
+    else
+    {
+        //choose a file from dialog windows??
+    }
 
     /* Load settings from file
      **/

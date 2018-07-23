@@ -4,6 +4,7 @@
 #include <QMainWindow>
 #include <QTimer>
 #include <QDebug>
+#include <QTranslator>
 
 #include "ui_mainwindow.h"
 #include "snap7.h"
@@ -43,12 +44,21 @@ public:
     } testStruct_t, *PtestStruct_t;
 #pragma pack(pop)
 
+private:
+    QTranslator *Italian;
+
+protected:
+    //void closeEvent(QCloseEvent *event);
+    void changeEvent(QEvent *event);
+
 private slots:
     void on_pbWrite_clicked();
 
     void update();
 
     void on_pbTestCasting_clicked();
+    void on_actionEnglish_triggered();
+    void on_actionItalian_triggered();
 };
 
 #endif // MAINWINDOW_H

@@ -1,0 +1,8 @@
+<RCC>
+    <qresource prefix="/images">
+        <file>images/S71200-DB1.png</file>
+    </qresource>
+    <qresource prefix="/translations">
+        <file>translation/translation_it.qm</file>
+    </qresource>
+</RCC>
