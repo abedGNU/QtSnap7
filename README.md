@@ -1,4 +1,5 @@
-# QtSnap7
+# QtSnap7 
+[wiki]https://abedgnu.github.io/QtSnap7/
 Qt5.9 snap7 S7-1200 cyclic reading
 
 #### Snap7
@@ -8,4 +9,3 @@ Qt5.9 snap7 S7-1200 cyclic reading
 #### Qt5
   http://doc.qt.io/qt-5/qtexamplesandtutorials.html
   
-# https://abedgnu.github.io/QtSnap7/
